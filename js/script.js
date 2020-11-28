@@ -17,6 +17,8 @@ function getPreviousWeekMonday() {
 
 $(document).ready(function () {
 
+    $('#todaysDate').text(new Date().toLocaleDateString());
+
     var currenciesRatesTable = $('#currencies_rates').DataTable({
         dom: 'rt',
         ajax: {
@@ -27,10 +29,21 @@ $(document).ready(function () {
             }
         },
         columns: [
-            { title: "Currency" },
-            { title: "Exchange Rate" }
+            { title: "Currency", "className": "tableFirstColumn" },
+            { title: "Exchange Rate", "className": "tableSecondColumn" }
         ],
-        scrollY: 600,
+        columnDefs: [{
+            width: "50%",
+            targets: [0],
+            render: function (data) {
+                return '<img src="img/currency/' + data + '.png" alt="' + data + '"> ' + data;
+            }
+        },
+        {
+            width: "50%",
+            targets: [1],
+        }],
+        scrollY: 400,
         paging: false
     });
 
@@ -50,16 +63,21 @@ $(document).ready(function () {
             }
         },
         columns: [
-            { title: "Date" },
-            { title: "Exchange Rate" }
+            { title: "Date", "className": "tableFirstColumn" },
+            { title: "Exchange Rate", "className": "tableSecondColumn" }
         ],
-        scrollY: 600,
+        columnDefs: [{
+            width: "50%",
+            targets: [0, 1]
+        }],
+        scrollY: 400,
         paging: false
     });
 
     $('#currencies_rates tbody').on('click', 'tr', function () {
         var rowData = currenciesRatesTable.row(this).data();
         selectedCurrency = rowData[0]
+        $('#selectedCurrencyText').text(selectedCurrency + ' Currency Rate against Polish Zloty in Time');
         currencyRateUrl = 'https://api.exchangeratesapi.io/history?start_at=' + startDate + '&end_at=' + endDate + '&base=PLN&symbols=' + selectedCurrency;
         currencyRateTable.ajax.url(currencyRateUrl).load();
         if ($(this).hasClass('selected')) {

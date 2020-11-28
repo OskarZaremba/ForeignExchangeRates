@@ -1,0 +1,151 @@
+/* =======================================================
+    Arkusz sytli dla Kursów Wymiany Walut - Standardowy Styl
+    ------------------------------------------------------
+    Czcionki: Raleway & Open Snas
+    ------------------------------------------------------
+    Kolory:
+        Bone:               #e0ddcf
+        Pewter Blue:        #8B9EB7
+ ========================================================= */
+ /* ==================================================
+                    Html, Body
+===================================================== */
+html,
+body {
+    height: 100%;
+}
+
+body {
+    background: #e0ddcf;
+    font-family: "Open Sans", "sans-serif";
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: "Raleway", "sans-serif";
+}
+
+p {
+    font-family: "Open Sans", "sans-serif";
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+/* ==================================================
+                    Header
+===================================================== */
+#title-strip {
+    background: #232020;
+    color: #fff;
+    padding: 5px 5px;
+    border-bottom: red solid 2px;
+    text-transform: uppercase;
+}
+
+/* ==================================================
+                    Currency Data
+===================================================== */
+
+#currency_data {
+    background: #e0ddcf;
+    width: 100%;
+    height: 100%;
+}
+
+#content {
+    margin: 0 auto;
+    padding: 130px 20px 70px 20px;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0);
+    transform: translate(-50%, 0);
+    min-height: 100%;
+    width: 95%;
+    background-color: #fff;
+    -webkit-box-shadow: 3px 3px 30px 5px rgba(204, 204, 204, 0.9);
+    box-shadow: 3px 3px 30px 5px rgba(204, 204, 204, 0.9);
+}
+
+/* ==================================================
+                    Headings
+===================================================== */
+.section-heading h3 {
+    color: #8B9EB7;
+    font-weight: 600;
+    font-size: 25px;
+    word-spacing: 10px;
+    text-transform: uppercase;
+}
+
+/* ==================================================
+                    Content boxes
+===================================================== */
+.content-box-sm {
+    padding: 40px 10px;
+}
+
+/* ==================================================
+                    Tables
+===================================================== */
+.table-wrapper {
+    background-color: #e0ddcf;
+    border: 1px solid #8B9EB7;
+    margin: 5px;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+.table-wrapper tr {
+    cursor: pointer;
+}
+
+.dataTables_scrollBody {
+    border-bottom: none !important;
+}
+
+.tableFirstColumn {
+    text-align: center;
+    font-weight: 900;
+}
+
+.tableSecondColumn {
+    text-align: center;
+    font-weight: 600;
+}
+
+/* ==================================================
+                    Footer
+===================================================== */
+footer {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #232020;
+    padding: 10px;
+    border-top: red solid 2px;
+}
+
+footer {
+    font-size: 10px;
+    color: #fefffe;
+    line-height: 15px;
+    margin: 0;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer img {
+    height: 15px;
+}
